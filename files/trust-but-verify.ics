@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//thinkbutverify.com//exhibition//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:exhibition-2026@thinkbutverify.com
+DTSTAMP:20261005T122611Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261226
+SUMMARY:Доверяй\, но проверяй / Trust\, but Verify
+LOCATION:МВЦ «ЗИЛАРТ»\, Москва\, бульвар Брать
+ ев Весниных\, 3
+DESCRIPTION:Выставка\, которая проверяет вас. в
+ т–вс 10:00–22:00. https://thinkbutverify.com/
+URL:https://thinkbutverify.com/
+END:VEVENT
+END:VCALENDAR
