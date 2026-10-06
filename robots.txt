@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thinkbutverify.com/sitemap.xml
+Sitemap: https://trustbutverify.art/sitemap.xml
