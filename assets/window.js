@@ -59,29 +59,4 @@ if (k < steps && sweeping) { requestAnimationFrame(sweep); } else { sweeping = f
 setTimeout(function () { requestAnimationFrame(sweep); }, 350);
 }
 }
-var live = document.querySelector("[data-live]");
-if (live && live.dataset.from) {
-var dayUTC = function (s) { var p = s.split("-"); return Date.UTC(+p[0], +p[1] - 1, +p[2]); };
-var fmt = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Moscow", year: "numeric", month: "2-digit", day: "2-digit", weekday: "short" });
-var parts = {};
-fmt.formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
-var today = dayUTC(parts.year + "-" + parts.month + "-" + parts.day);
-var open = dayUTC(live.dataset.from), close = dayUTC(live.dataset.to || live.dataset.from);
-var text;
-if (today < open) {
-var n = Math.round((open - today) / 864e5);
-text = live.dataset.before.replace("{n}", String(n)).replace(/\{([^{}|]+)\|([^{}|]+)(?:\|([^{}|]+))?\}/, function (m, a, b, c) {
-if (c === undefined) { return n === 1 ? a : b; }
-var m10 = n % 10, m100 = n % 100;
-if (m100 >= 11 && m100 <= 14) { return c; }
-return m10 === 1 ? a : (m10 >= 2 && m10 <= 4 ? b : c);
-});
-} else if (today <= close) {
-text = parts.weekday === "Mon" ? live.dataset.closed : live.dataset.open;
-} else {
-text = live.dataset.after;
-}
-live.textContent = text;
-live.hidden = false;
-}
 })();
